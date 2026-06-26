@@ -1,0 +1,60 @@
+name: 🏗️ Build APK
+
+on:
+  push:
+    branches: [ main ]
+    tags: [ 'v*' ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: ☕ Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: 🤖 Setup Android SDK
+        uses: android-actions/setup-android@v3
+        with:
+          cmdline-tools-version: 12266719
+
+      - name: 🔨 Build Debug APK
+        run: |
+          chmod +x gradlew || true
+          ./gradlew :app:assembleDebug --no-daemon --stacktrace -x test
+
+      - name: 📤 Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: termux-arab-apk
+          path: app/build/outputs/apk/debug/*.apk
+          retention-days: 90
+
+      - name: 🎉 Create Release on Tag
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: app/build/outputs/apk/debug/*.apk
+          name: 📱 تيرمكس العرب ${{ github.ref_name }}
+          body: |
+            # 📱 تيرمكس العرب ${{ github.ref_name }}
+
+            تطبيق طرفية احترافي بواجهة عربية كاملة.
+
+            ## ✨ المميزات
+            - واجهة عربية كاملة (RTL)
+            - 150+ أداة في 8 فئات
+            - طرفية تفاعلية حقيقية
+            - تصميم Material Design
+            - بدون Root
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

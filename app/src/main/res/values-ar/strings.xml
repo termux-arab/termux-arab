@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">تيرمكس العرب</string>
+    <string name="app_subtitle">بيئة طرفية احترافية بالعربية</string>
+
+    <!-- أزرار -->
+    <string name="open_terminal">💻 الطرفية</string>
+    <string name="categories">📂 الفئات</string>
+    <string name="search">🔍 بحث</string>
+    <string name="about">ℹ️ حول</string>
+    <string name="run">▶ تشغيل</string>
+    <string name="stop">⏹ إيقاف</string>
+    <string name="clear">🗑 مسح</string>
+    <string name="back">← رجوع</string>
+    <string name="install">⬇ تثبيت</string>
+
+    <!-- فئات -->
+    <string name="cat_pentest">💀 اختبار الاختراق</string>
+    <string name="cat_network">🌐 الشبكات</string>
+    <string name="cat_web">🌍 الويب</string>
+    <string name="cat_password">🔐 كلمات المرور</string>
+    <string name="cat_recon">🕵️ الاستطلاع</string>
+    <string name="cat_wifi">📶 الواي فاي</string>
+    <string name="cat_dev">💻 التطوير</string>
+    <string name="cat_forensics">🔍 التحليل الجنائي</string>
+
+    <!-- رسائل -->
+    <string name="loading">جارٍ التحميل...</string>
+    <string name="no_tools">لا توجد أدوات</string>
+    <string name="tool_not_found">الأداة غير مثبتة</string>
+    <string name="install_prompt">هل تريد تثبيت هذه الأداة؟</string>
+    <string name="yes">نعم</string>
+    <string name="no">لا</string>
+    <string name="needs_root">يتطلب Root</string>
+    <string name="dangerous">⚠️ خطير</string>
+    <string name="free">مجاني</string>
+
+    <!-- الطرفية -->
+    <string name="terminal_title">💻 الطرفية</string>
+    <string name="type_command">اكتب أمراً...</string>
+    <string name="send">إرسال</string>
+
+    <!-- حول -->
+    <string name="about_title">حول تيرمكس العرب</string>
+    <string name="about_version">الإصدار: 1.0.0</string>
+    <string name="about_desc">تطبيق طرفية احترافي بواجهة عربية كاملة. يحتوي على 150+ أداة في 8 فئات مختلفة. يدعم تشغيل أوامر Linux مباشرة على هاتفك بدون صلاحيات Root.</string>
+    <string name="about_features">✨ المميزات:\n• واجهة عربية كاملة (RTL)\n• 150+ أداة في 8 فئات\n• طرفية تفاعلية حقيقية\n• تثبيت تلقائي للأدوات\n• دعم أوامر Linux\n• تصميم عصري Material Design</string>
+
+    <!-- تلميحات -->
+    <string name="hint_args">المعطيات (مثل: 192.168.1.1)</string>
+    <string name="hint_search">ابحث عن أداة...</string>
+    <string name="welcome_msg">مرحباً بك في تيرمكس العرب!\nاكتب "help" للمساعدة.\n</string>
+</resources>
