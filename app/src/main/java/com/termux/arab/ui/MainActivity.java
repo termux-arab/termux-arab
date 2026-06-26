@@ -78,6 +78,14 @@ public class MainActivity extends AppCompatActivity {
             startActivity(new Intent(this, GithubActivity.class));
         });
 
+        Button btnPackages = findViewById(R.id.btn_packages);
+        btnPackages.setOnClickListener(v -> {
+            startActivity(new Intent(this, PackageManagerActivity.class));
+        });
+
+        // تهيئة بيئة Linux
+        new com.termux.arab.core.LinuxEnv(this).init();
+
         // إحصائيات
         TextView stats = findViewById(R.id.tv_stats);
         stats.setText(ToolRegistry.getAllTools().size() + " أداة في " + cats.length + " فئات");

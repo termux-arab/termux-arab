@@ -171,6 +171,17 @@
             android:backgroundTint="#24292E"
             android:textSize="14sp"
             android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/btn_packages"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="📦 مدير الحزم - 50+ أداة"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#00695C"
+            android:textSize="14sp"
+            android:textStyle="bold"
             android:layout_marginBottom="16dp" />
 
         <TextView
