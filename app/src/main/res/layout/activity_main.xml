@@ -82,26 +82,56 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginBottom="16dp">
+            android:layout_marginBottom="8dp">
 
             <Button
-                android:id="@+id/btn_vuln_scanner"
+                android:id="@+id/btn_network_scanner"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
                 android:layout_weight="1"
-                android:text="🛡️ مكتشف الثغرات"
+                android:text="🌐 ماسح الشبكة"
                 android:textColor="#FFFFFF"
-                android:backgroundTint="#D32F2F"
+                android:backgroundTint="#1565C0"
+                android:textSize="12sp"
                 android:layout_marginEnd="4dp" />
 
             <Button
-                android:id="@+id/btn_vuln_db"
+                android:id="@+id/btn_system_monitor"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
                 android:layout_weight="1"
-                android:text="📚 قاعدة الثغرات"
+                android:text="📊 مراقب النظام"
                 android:textColor="#FFFFFF"
-                android:backgroundTint="#7B1FA2" />
+                android:backgroundTint="#00838F"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <Button
+                android:id="@+id/btn_password_tools"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:text="🔐 كلمات مرور"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#E65100"
+                android:textSize="12sp"
+                android:layout_marginEnd="4dp" />
+
+            <Button
+                android:id="@+id/btn_http_tester"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:text="🌐 اختبار HTTP"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#4527A0"
+                android:textSize="12sp" />
         </LinearLayout>
 
         <TextView

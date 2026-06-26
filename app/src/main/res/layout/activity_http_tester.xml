@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FAFAFA">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="@drawable/header_gradient">
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="🌐" android:textSize="32sp" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="اختبار HTTP / API" android:textColor="#FFF" android:textSize="20sp"
+            android:textStyle="bold" android:layout_marginTop="4dp" />
+    </LinearLayout>
+
+    <ScrollView android:layout_width="match_parent" android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:padding="12dp">
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:layout_marginBottom="8dp">
+                <Spinner android:id="@+id/http_method" android:layout_width="100dp"
+                    android:layout_height="wrap_content" />
+                <EditText android:id="@+id/http_url" android:layout_width="0dp"
+                    android:layout_height="wrap_content" android:layout_weight="1"
+                    android:hint="https://api.example.com" android:background="#FFF"
+                    android:padding="10dp" android:layout_marginStart="4dp" />
+            </LinearLayout>
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Headers (سطر لكل header):" android:textSize="12sp"
+                android:textColor="#666" android:layout_marginBottom="4dp" />
+            <EditText android:id="@+id/http_headers" android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Authorization: Bearer TOKEN&#10;Content-Type: application/json"
+                android:background="#FFF" android:padding="10dp" android:minLines="2"
+                android:textSize="12sp" android:fontFamily="monospace"
+                android:layout_marginBottom="8dp" />
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Body (JSON):" android:textSize="12sp"
+                android:textColor="#666" android:layout_marginBottom="4dp" />
+            <EditText android:id="@+id/http_body" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:hint='{"key":"value"}'
+                android:background="#FFF" android:padding="10dp" android:minLines="3"
+                android:textSize="12sp" android:fontFamily="monospace"
+                android:layout_marginBottom="8dp" />
+
+            <Button android:id="@+id/http_send" android:layout_width="match_parent"
+                android:layout_height="45dp" android:text="▶ إرسال الطلب"
+                android:textColor="#FFF" android:backgroundTint="#4CAF50" android:layout_marginBottom="8dp" />
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:layout_marginBottom="8dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Status: " android:textSize="12sp" android:textColor="#666" />
+                <TextView android:id="@+id/http_response_code" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:text="--"
+                    android:textSize="14sp" android:textStyle="bold" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="  ⏱ " android:textSize="12sp" android:layout_marginStart="16dp" />
+                <TextView android:id="@+id/http_response_time" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:text="--" android:textSize="12sp" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="  📦 " android:textSize="12sp" android:layout_marginStart="16dp" />
+                <TextView android:id="@+id/http_response_size" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:text="--" android:textSize="12sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <ScrollView android:id="@+id/http_scroll" android:layout_width="match_parent"
+        android:layout_height="0dp" android:layout_weight="1" android:background="#1A1A1A"
+        android:padding="8dp">
+        <TextView android:id="@+id/http_response" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:textColor="#FFF"
+            android:textSize="12sp" android:fontFamily="monospace"
+            android:textIsSelectable="true" android:lineSpacingExtra="2dp"
+            android:text="في انتظار الطلب..." />
+    </ScrollView>
+</LinearLayout>

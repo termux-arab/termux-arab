@@ -53,6 +53,26 @@ public class MainActivity extends AppCompatActivity {
             startActivity(new Intent(this, VulnDBActivity.class));
         });
 
+        Button btnNetworkScanner = findViewById(R.id.btn_network_scanner);
+        btnNetworkScanner.setOnClickListener(v -> {
+            startActivity(new Intent(this, NetworkScannerActivity.class));
+        });
+
+        Button btnSystemMonitor = findViewById(R.id.btn_system_monitor);
+        btnSystemMonitor.setOnClickListener(v -> {
+            startActivity(new Intent(this, SystemMonitorActivity.class));
+        });
+
+        Button btnPasswordTools = findViewById(R.id.btn_password_tools);
+        btnPasswordTools.setOnClickListener(v -> {
+            startActivity(new Intent(this, PasswordToolsActivity.class));
+        });
+
+        Button btnHttpTester = findViewById(R.id.btn_http_tester);
+        btnHttpTester.setOnClickListener(v -> {
+            startActivity(new Intent(this, HttpTesterActivity.class));
+        });
+
         // إحصائيات
         TextView stats = findViewById(R.id.tv_stats);
         stats.setText(ToolRegistry.getAllTools().size() + " أداة في " + cats.length + " فئات");

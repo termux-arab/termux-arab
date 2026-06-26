@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAFAFA">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:background="@drawable/header_gradient"
+            android:layout_marginBottom="16dp">
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="📊" android:textSize="40sp" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="مراقب النظام" android:textColor="#FFF" android:textSize="22sp"
+                android:textStyle="bold" android:layout_marginTop="8dp" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="مراقبة حقيقية للأداء والموارد" android:textColor="#C9A961" android:textSize="13sp" />
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:layout_marginBottom="12dp"
+            app:cardCornerRadius="12dp" app:cardElevation="3dp"
+            xmlns:app="http://schemas.android.com/apk/res-auto">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="16dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="⚡ المعالج (CPU)" android:textSize="16sp" android:textStyle="bold"
+                    android:textColor="#0F4C2A" />
+                <TextView android:id="@+id/cpu_usage_text" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:text="0%" android:textSize="24sp"
+                    android:textStyle="bold" android:textColor="#1976D2" android:layout_marginTop="4dp" />
+                <ProgressBar android:id="@+id/cpu_bar" android:layout_width="match_parent"
+                    android:layout_height="8dp" android:layout_marginTop="8dp"
+                    style="?android:attr/progressBarStyleHorizontal" android:max="100" />
+                <TextView android:id="@+id/cpu_cores" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:text="cores: -" android:textSize="12sp"
+                    android:textColor="#888" android:layout_marginTop="4dp" />
+                <TextView android:id="@+id/cpu_info" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:text="-" android:textSize="12sp"
+                    android:textColor="#888" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:layout_marginBottom="12dp"
+            app:cardCornerRadius="12dp" app:cardElevation="3dp"
+            xmlns:app="http://schemas.android.com/apk/res-auto">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="16dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="💾 الذاكرة (RAM)" android:textSize="16sp" android:textStyle="bold"
+                    android:textColor="#0F4C2A" />
+                <TextView android:id="@+id/ram_usage_text" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:text="0%" android:textSize="24sp"
+                    android:textStyle="bold" android:textColor="#FF9800" android:layout_marginTop="4dp" />
+                <ProgressBar android:id="@+id/ram_bar" android:layout_width="match_parent"
+                    android:layout_height="8dp" android:layout_marginTop="8dp"
+                    style="?android:attr/progressBarStyleHorizontal" android:max="100" />
+                <TextView android:id="@+id/ram_total" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:text="الكل: -" android:textSize="12sp"
+                    android:textColor="#888" android:layout_marginTop="4dp" />
+                <TextView android:id="@+id/ram_free" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:text="المتاحة: -" android:textSize="12sp"
+                    android:textColor="#888" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:layout_marginBottom="12dp"
+            app:cardCornerRadius="12dp" app:cardElevation="3dp"
+            xmlns:app="http://schemas.android.com/apk/res-auto">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="16dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="📦 التخزين" android:textSize="16sp" android:textStyle="bold"
+                    android:textColor="#0F4C2A" />
+                <TextView android:id="@+id/storage_info" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:text="-" android:textSize="14sp"
+                    android:textColor="#444" android:layout_marginTop="4dp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:layout_marginBottom="12dp"
+            app:cardCornerRadius="12dp" app:cardElevation="3dp"
+            xmlns:app="http://schemas.android.com/apk/res-auto">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="16dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="🔋 البطارية" android:textSize="16sp" android:textStyle="bold"
+                    android:textColor="#0F4C2A" />
+                <TextView android:id="@+id/battery_info" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:text="-%" android:textSize="24sp"
+                    android:textStyle="bold" android:textColor="#4CAF50" android:layout_marginTop="4dp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:layout_marginBottom="12dp"
+            app:cardCornerRadius="12dp" app:cardElevation="3dp"
+            xmlns:app="http://schemas.android.com/apk/res-auto">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="16dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="🌐 الشبكة" android:textSize="16sp" android:textStyle="bold"
+                    android:textColor="#0F4C2A" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="عنوان IP:" android:textSize="12sp" android:textColor="#888"
+                    android:layout_marginTop="4dp" />
+                <TextView android:id="@+id/network_ip" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:text="-" android:textSize="14sp"
+                    android:textColor="#444" android:fontFamily="monospace" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="عنوان MAC:" android:textSize="12sp" android:textColor="#888"
+                    android:layout_marginTop="4dp" />
+                <TextView android:id="@+id/network_mac" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:text="-" android:textSize="14sp"
+                    android:textColor="#444" android:fontFamily="monospace" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:layout_marginBottom="12dp"
+            app:cardCornerRadius="12dp" app:cardElevation="3dp"
+            xmlns:app="http://schemas.android.com/apk/res-auto">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="16dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="⏱️ وقت التشغيل" android:textSize="16sp" android:textStyle="bold"
+                    android:textColor="#0F4C2A" />
+                <TextView android:id="@+id/uptime_text" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:text="-" android:textSize="14sp"
+                    android:textColor="#444" android:layout_marginTop="4dp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</ScrollView>

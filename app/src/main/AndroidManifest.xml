@@ -44,6 +44,10 @@
         <activity android:name=".ui.AboutActivity" />
         <activity android:name=".ui.VulnScannerActivity" />
         <activity android:name=".ui.VulnDBActivity" />
+        <activity android:name=".ui.NetworkScannerActivity" />
+        <activity android:name=".ui.SystemMonitorActivity" />
+        <activity android:name=".ui.PasswordToolsActivity" />
+        <activity android:name=".ui.HttpTesterActivity" />
 
     </application>
 </manifest>
