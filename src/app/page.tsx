@@ -48,6 +48,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { AdComponent } from "@/components/AdComponent";
+import { LiveStats } from "@/components/LiveStats";
 
 export default function HomePage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
