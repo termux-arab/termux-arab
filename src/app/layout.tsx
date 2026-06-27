@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Noto_Kufi_Arabic, Noto_Naskh_Arabic } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
+import { GoogleAnalytics } from "@/components/Analytics";
 
 const notoKufi = Noto_Kufi_Arabic({
   variable: "--font-kufi",
@@ -105,6 +106,23 @@ export const metadata: Metadata = {
   verification: {
     google: "google-site-verification-token",
   },
+  other: {
+    "msvalidate.01": "bing-site-verification-token",
+    "yandex-verification": "yandex-verification-token",
+    "theme-color": "#0F4C2A",
+    "apple-mobile-web-app-capable": "yes",
+    "apple-mobile-web-app-status-bar-style": "black-translucent",
+    "apple-mobile-web-app-title": "تيرمكس العرب",
+    "mobile-web-app-capable": "yes",
+    "application-name": "تيرمكس العرب",
+    "og:site_name": "تيرمكس العرب",
+    "og:locale": "ar_SA",
+    "og:type": "website",
+    "twitter:site": "@termux_arab",
+    "twitter:creator": "@termux_arab",
+    "telegram:channel": "https://t.me/termux_arab",
+    "pinterest:rich_pin": "true",
+  },
 };
 
 export default function RootLayout({
@@ -120,6 +138,44 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
         {/* JSON-LD Structured Data for SEO */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Termux Arab",
+              alternateName: "تيرمكس العرب",
+              url: SITE_URL,
+              logo: `${SITE_URL}/icon.png`,
+              description: SITE_DESCRIPTION,
+              foundingDate: "2024",
+              sameAs: [
+                "https://github.com/termux-arab",
+                "https://t.me/termux_arab",
+                "https://twitter.com/termux_arab",
+              ],
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: "تيرمكس العرب",
+              alternateName: "Termux Arab",
+              url: SITE_URL,
+              inLanguage: "ar-SA",
+              potentialAction: {
+                "@type": "SearchAction",
+                target: `${SITE_URL}/?q={search_term_string}`,
+                "query-input": "required name=search_term_string",
+              },
+            }),
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -243,6 +299,7 @@ export default function RootLayout({
         className={`${notoKufi.variable} ${notoNaskh.variable} antialiased bg-background text-foreground font-sans`}
         style={{ fontFamily: "var(--font-kufi), system-ui, sans-serif" }}
       >
+        <GoogleAnalytics />
         {children}
         <Toaster />
       </body>

@@ -379,18 +379,12 @@ export default function HomePage() {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
-              {stats.map((stat, i) => (
-                <div
-                  key={i}
-                  className="bg-white/10 backdrop-blur rounded-xl p-4 border border-white/10"
-                >
-                  <stat.icon className="w-6 h-6 mx-auto mb-2 text-amber-300" />
-                  <div className="text-2xl md:text-3xl font-bold text-white">{stat.value}</div>
-                  <div className="text-xs text-emerald-200">{stat.label}</div>
-                </div>
-              ))}
+            <div className="mb-8">
+              <h3 className="text-center text-amber-300 text-sm font-semibold mb-3">
+                إحصائيات حية • Live Statistics
+              </h3>
             </div>
+            <LiveStats />
           </div>
         </div>
 
